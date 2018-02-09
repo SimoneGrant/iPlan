@@ -14,6 +14,8 @@
 		181CAA2F202DF126002299E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181CAA2D202DF126002299E1 /* LaunchScreen.storyboard */; };
 		181CAA3A202DF26B002299E1 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA39202DF26B002299E1 /* DetailTableViewController.swift */; };
 		181CAA3C202DF98D002299E1 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA3B202DF98D002299E1 /* SwipeTableViewController.swift */; };
+		181CAA3E202DFEDB002299E1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA3D202DFEDB002299E1 /* Section.swift */; };
+		181CAA41202E011E002299E1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA40202E011E002299E1 /* Entry.swift */; };
 		C76A0E42595AC226C19414D4 /* Pods_iPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E21B1B6B10034460AF3DF6 /* Pods_iPlan.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		181CAA30202DF126002299E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		181CAA39202DF26B002299E1 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		181CAA3B202DF98D002299E1 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		181CAA3D202DFEDB002299E1 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		181CAA40202E011E002299E1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		68E21B1B6B10034460AF3DF6 /* Pods_iPlan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPlan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A18C0007492646B0F060551 /* Pods-iPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPlan/Pods-iPlan.debug.xcconfig"; sourceTree = "<group>"; };
 		EB9811D47B5F8182DEF992B5 /* Pods-iPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPlan/Pods-iPlan.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 		181CAA23202DF126002299E1 /* iPlan */ = {
 			isa = PBXGroup;
 			children = (
+				181CAA3F202DFEE9002299E1 /* Model */,
 				181CAA37202DF140002299E1 /* View Controller */,
 				181CAA36202DF13B002299E1 /* View */,
 				181CAA38202DF155002299E1 /* Supporting Files */,
@@ -99,6 +104,15 @@
 				181CAA2D202DF126002299E1 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		181CAA3F202DFEE9002299E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				181CAA3D202DFEDB002299E1 /* Section.swift */,
+				181CAA40202E011E002299E1 /* Entry.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7DBEDA4F2C3021CD4F7FD79B /* Pods */ = {
@@ -253,7 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181CAA41202E011E002299E1 /* Entry.swift in Sources */,
 				181CAA3C202DF98D002299E1 /* SwipeTableViewController.swift in Sources */,
+				181CAA3E202DFEDB002299E1 /* Section.swift in Sources */,
 				181CAA3A202DF26B002299E1 /* DetailTableViewController.swift in Sources */,
 				181CAA27202DF126002299E1 /* CategoriesTableViewController.swift in Sources */,
 				181CAA25202DF126002299E1 /* AppDelegate.swift in Sources */,
