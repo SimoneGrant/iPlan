@@ -10,7 +10,7 @@ import UIKit
 
 class DetailTableViewController: SwipeTableViewController {
     
-    var entrySelected: Entry? {
+    var entrySelected: Section? {
         didSet {
             
         }

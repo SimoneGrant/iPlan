@@ -13,7 +13,7 @@ import ChameleonFramework
 class CategoriesTableViewController: SwipeTableViewController {
     
     let realm = try! Realm()
-    var sections: Result<Section>?
+    var sections: Results<Section>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +29,10 @@ class CategoriesTableViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if let category = sections?[indexPath.row] {
-            cell.textLabel.text = category.name
-            guard let color = UIColor(hexString: category.color) else { return }
+            cell.textLabel?.text = category.categoryName
+            guard let color = UIColor(hexString: category.color) else { fatalError() }
             cell.backgroundColor = color
-            cell.textLabel.color = ContrastColorOf(color, returnFlat: true)
+            cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
         }
         return cell
     }
@@ -52,9 +52,35 @@ class CategoriesTableViewController: SwipeTableViewController {
     
     //MARK: - Manipulate Realm data
     
+    //load
     func loadEntries() {
-        entries.realmObjects(Entry.self)
+        sections = realm.objects(Section.self)
         tableView.reloadData()
+    }
+    
+    //save
+    func saveEntries(entry: Entry) {
+        do {
+            try realm.write {
+                realm.add(entry)
+            }
+        } catch {
+            print("Could not save entry", error)
+        }
+        tableView.reloadData()
+    }
+    
+    //delete and update data
+    override func updateModel(at indexPath: IndexPath) {
+        if let deleteItem = sections?[indexPath.row] {
+            do {
+                try realm.write {
+                    realm.delete(deleteItem)
+                }
+            } catch {
+                print("Could not delete section", error)
+            }
+        }
     }
 
 }
