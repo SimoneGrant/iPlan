@@ -36,7 +36,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iPlan" id="lJB-A7-U9c">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GIq-4e-fvG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GIq-4e-fvG">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="hzD-nU-6Ie" id="q8K-Jh-4tR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4C-oC-Zr1" userLabel="First Responder" sceneMemberID="firstResponder"/>

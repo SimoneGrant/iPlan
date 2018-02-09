@@ -59,10 +59,10 @@ class CategoriesTableViewController: SwipeTableViewController {
     }
     
     //save
-    func saveEntries(entry: Entry) {
+    func saveSection(section: Section) {
         do {
             try realm.write {
-                realm.add(entry)
+                realm.add(section)
             }
         } catch {
             print("Could not save entry", error)
@@ -82,6 +82,28 @@ class CategoriesTableViewController: SwipeTableViewController {
             }
         }
     }
+    
+    //MARK: - Add Sections
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textField = UITextField()
+        let alert = UIAlertController(title: "Add new section", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add", style: .default) { (alertAction) in
+            let newSection = Section()
+            newSection.categoryName = textField.text!
+            newSection.color = UIColor.randomFlat.hexValue()
+            self.saveSection(section: newSection)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alert.addAction(action)
+        alert.addAction(cancel)
+        alert.addTextField { (textfield) in
+            textField = textfield
+            textField.placeholder = "Add a new section"
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    
 
 }
 
