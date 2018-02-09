@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		181CAA25202DF126002299E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA24202DF126002299E1 /* AppDelegate.swift */; };
-		181CAA27202DF126002299E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA26202DF126002299E1 /* ViewController.swift */; };
+		181CAA27202DF126002299E1 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA26202DF126002299E1 /* CategoriesTableViewController.swift */; };
 		181CAA2A202DF126002299E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181CAA28202DF126002299E1 /* Main.storyboard */; };
 		181CAA2C202DF126002299E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181CAA2B202DF126002299E1 /* Assets.xcassets */; };
 		181CAA2F202DF126002299E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181CAA2D202DF126002299E1 /* LaunchScreen.storyboard */; };
+		181CAA3A202DF26B002299E1 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA39202DF26B002299E1 /* DetailTableViewController.swift */; };
+		181CAA3C202DF98D002299E1 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CAA3B202DF98D002299E1 /* SwipeTableViewController.swift */; };
+		C76A0E42595AC226C19414D4 /* Pods_iPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E21B1B6B10034460AF3DF6 /* Pods_iPlan.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		181CAA21202DF126002299E1 /* iPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		181CAA24202DF126002299E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		181CAA26202DF126002299E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		181CAA26202DF126002299E1 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		181CAA29202DF126002299E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		181CAA2B202DF126002299E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181CAA2E202DF126002299E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181CAA30202DF126002299E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181CAA39202DF26B002299E1 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		181CAA3B202DF98D002299E1 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		68E21B1B6B10034460AF3DF6 /* Pods_iPlan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPlan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A18C0007492646B0F060551 /* Pods-iPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPlan/Pods-iPlan.debug.xcconfig"; sourceTree = "<group>"; };
+		EB9811D47B5F8182DEF992B5 /* Pods-iPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPlan/Pods-iPlan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C76A0E42595AC226C19414D4 /* Pods_iPlan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				181CAA23202DF126002299E1 /* iPlan */,
 				181CAA22202DF126002299E1 /* Products */,
+				7DBEDA4F2C3021CD4F7FD79B /* Pods */,
+				F720D3CB36A5D47903719532 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,57 @@
 		181CAA23202DF126002299E1 /* iPlan */ = {
 			isa = PBXGroup;
 			children = (
-				181CAA24202DF126002299E1 /* AppDelegate.swift */,
-				181CAA26202DF126002299E1 /* ViewController.swift */,
-				181CAA28202DF126002299E1 /* Main.storyboard */,
-				181CAA2B202DF126002299E1 /* Assets.xcassets */,
-				181CAA2D202DF126002299E1 /* LaunchScreen.storyboard */,
+				181CAA37202DF140002299E1 /* View Controller */,
+				181CAA36202DF13B002299E1 /* View */,
+				181CAA38202DF155002299E1 /* Supporting Files */,
 				181CAA30202DF126002299E1 /* Info.plist */,
 			);
 			path = iPlan;
+			sourceTree = "<group>";
+		};
+		181CAA36202DF13B002299E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181CAA28202DF126002299E1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		181CAA37202DF140002299E1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				181CAA3B202DF98D002299E1 /* SwipeTableViewController.swift */,
+				181CAA26202DF126002299E1 /* CategoriesTableViewController.swift */,
+				181CAA39202DF26B002299E1 /* DetailTableViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		181CAA38202DF155002299E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				181CAA2B202DF126002299E1 /* Assets.xcassets */,
+				181CAA24202DF126002299E1 /* AppDelegate.swift */,
+				181CAA2D202DF126002299E1 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DBEDA4F2C3021CD4F7FD79B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A18C0007492646B0F060551 /* Pods-iPlan.debug.xcconfig */,
+				EB9811D47B5F8182DEF992B5 /* Pods-iPlan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F720D3CB36A5D47903719532 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68E21B1B6B10034460AF3DF6 /* Pods_iPlan.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 181CAA33202DF126002299E1 /* Build configuration list for PBXNativeTarget "iPlan" */;
 			buildPhases = (
+				E07EE7E0B1B0394F9FB351EC /* [CP] Check Pods Manifest.lock */,
 				181CAA1D202DF126002299E1 /* Sources */,
 				181CAA1E202DF126002299E1 /* Frameworks */,
 				181CAA1F202DF126002299E1 /* Resources */,
+				9D826CD52B85C536376EB34A /* [CP] Embed Pods Frameworks */,
+				71D2D01EE1635315D4AA72E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +188,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71D2D01EE1635315D4AA72E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPlan/Pods-iPlan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D826CD52B85C536376EB34A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iPlan/Pods-iPlan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPlan/Pods-iPlan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E07EE7E0B1B0394F9FB351EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iPlan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		181CAA1D202DF126002299E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181CAA27202DF126002299E1 /* ViewController.swift in Sources */,
+				181CAA3C202DF98D002299E1 /* SwipeTableViewController.swift in Sources */,
+				181CAA3A202DF26B002299E1 /* DetailTableViewController.swift in Sources */,
+				181CAA27202DF126002299E1 /* CategoriesTableViewController.swift in Sources */,
 				181CAA25202DF126002299E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +391,7 @@
 		};
 		181CAA34202DF126002299E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A18C0007492646B0F060551 /* Pods-iPlan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +407,7 @@
 		};
 		181CAA35202DF126002299E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB9811D47B5F8182DEF992B5 /* Pods-iPlan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
