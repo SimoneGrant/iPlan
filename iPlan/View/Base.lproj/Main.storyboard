@@ -75,6 +75,16 @@
                             <outlet property="delegate" destination="2RR-yw-qVK" id="AGE-XC-4Bl"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="LgT-dK-YrO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NBa-vT-9UP">
+                            <connections>
+                                <action selector="addButtonTriggered:" destination="2RR-yw-qVK" id="HpY-G3-NRB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="noI-aq-nNk" id="6hm-2V-gmL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEZ-jr-YAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,6 +93,7 @@
         <!--Navigation Controller-->
         <scene sceneID="MSh-cq-GUp">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GdR-MU-Lck" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FDm-xu-FPz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gkp-NX-cox">
@@ -95,7 +106,6 @@
                         <segue destination="hzD-nU-6Ie" kind="relationship" relationship="rootViewController" id="nOI-ua-tDN"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GdR-MU-Lck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-503" y="179"/>
         </scene>

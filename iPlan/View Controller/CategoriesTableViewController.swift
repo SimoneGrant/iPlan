@@ -17,10 +17,10 @@ class CategoriesTableViewController: SwipeTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadEntries()
     }
     
-    //MARK: - Table view data source
+    // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections?.count ?? 1
@@ -37,10 +37,10 @@ class CategoriesTableViewController: SwipeTableViewController {
         return cell
     }
 
-    //MARK: - Table view delegate methods
+    // MARK: - Table view delegate methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToEntries", sender: self)
+//        performSegue(withIdentifier: "goToEntries", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,7 +50,7 @@ class CategoriesTableViewController: SwipeTableViewController {
         }
     }
     
-    //MARK: - Manipulate Realm data
+    // MARK: - Manipulate Realm data
     
     //load
     func loadEntries() {
@@ -83,7 +83,7 @@ class CategoriesTableViewController: SwipeTableViewController {
         }
     }
     
-    //MARK: - Add Sections
+    // MARK: - Add Sections
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
