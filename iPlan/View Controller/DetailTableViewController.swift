@@ -112,6 +112,7 @@ class DetailTableViewController: SwipeTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let entry = entries?[indexPath.row] {
+            print(entry.done)
             do {
                 try realm.write {
                     entry.done = !entry.done
@@ -120,6 +121,7 @@ class DetailTableViewController: SwipeTableViewController {
                 print("Error saving entry", error)
             }
         }
+        tableView.reloadData()
     }
     
     // MARK: - Manipulate Realm data
