@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import ChameleonFramework
+import TableFlip
 
 class DetailTableViewController: SwipeTableViewController {
     
@@ -20,10 +21,10 @@ class DetailTableViewController: SwipeTableViewController {
     
     var entries: Results<Entry>?
     let realm = try! Realm()
-    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animateTable()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +47,6 @@ class DetailTableViewController: SwipeTableViewController {
         navBar.barTintColor = navColor
         navBar.tintColor = ContrastColorOf(navColor, returnFlat: true)
         navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: ContrastColorOf(navColor, returnFlat: true)]
-        searchBar.barTintColor = navColor
     }
     
     // MARK: - Action
@@ -88,6 +88,7 @@ class DetailTableViewController: SwipeTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.textLabel?.font = UIFont.init(name: "Avenir", size: 18)
         if let entry = entries?[indexPath.row] {
             cell.textLabel?.text = entry.title
             cell.accessoryType = entry.done ? .checkmark : .none
@@ -101,6 +102,11 @@ class DetailTableViewController: SwipeTableViewController {
         }
             return cell
         }
+    
+    func animateTable() {
+        let top = TableViewAnimation.Table.top(duration: 0.8)
+        tableView.animate(animation: top)
+    }
     
     // MARK: - Table view delegate
     
@@ -136,21 +142,4 @@ class DetailTableViewController: SwipeTableViewController {
     }
 }
 
-// MARK: - Search bar
 
-extension DetailTableViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        entries = entries?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
-        tableView.reloadData()
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadEntries()
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
-        }
-    }
-}

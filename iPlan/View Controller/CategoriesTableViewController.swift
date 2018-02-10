@@ -9,15 +9,18 @@
 import UIKit
 import RealmSwift
 import ChameleonFramework
+import TableFlip
 
 class CategoriesTableViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     var sections: Results<Section>?
+    var rows = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadEntries()
+        animateTable()
     }
     
     // MARK: - Table view data source
@@ -33,6 +36,7 @@ class CategoriesTableViewController: SwipeTableViewController {
             guard let color = UIColor(hexString: category.color) else { fatalError() }
             cell.backgroundColor = color
             cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
+            cell.textLabel?.font = UIFont.init(name: "Avenir", size: 20)
         }
         return cell
     }
@@ -83,7 +87,7 @@ class CategoriesTableViewController: SwipeTableViewController {
         }
     }
     
-    // MARK: - Add Sections
+    // MARK: - Action
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
@@ -104,6 +108,10 @@ class CategoriesTableViewController: SwipeTableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-
+    func animateTable() {
+        let fade = TableViewAnimation.Cell.fade(duration: 0.5)
+        tableView.animate(animation: fade)
+    }
+    
 }
 
